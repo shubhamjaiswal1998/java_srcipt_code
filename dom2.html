@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom2</title>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="day">monday</div>
+      <div class="day">tuesday</div>
+      <div class="day">wesnesday</div>
+      <div class="day">tuesday</div>
+    </div>
+
+    <ul class="lang">
+      <li>java</li>
+    </ul>
+    <script>
+      ///////////////////////////////////////////////////////////////////////////////////////
+      const day_list = document.querySelector(".parent");
+      console.log(day_list.children);
+      console.log(day_list.children[0]);
+      console.log(day_list.children[0].innerHTML); // access all day
+      console.log(day_list.childNodes); // it will all nodelist of paraent class
+      /////////////////////////////////////////////////////////////////////////////////
+      function display1() {
+        for (let index = 0; index < day_list.children.length; index++) {
+          console.log(day_list.children[index].innerHTML);
+          day_list.children[index].style.color = "red";
+        }
+      }
+      display1();
+      /////////////////////////////////////////////////////////////////////////////////////
+      console.log(day_list.firstElementChild);
+      console.log(day_list.lastElementChild);
+      let days = document.querySelector(".day");
+      console.log(days); // monday
+      console.log(days.parentElement);
+
+      //////////////////////////////////////////////////////////////////////////////////////
+
+      // create new div by js in html page
+
+      const div1 = document.createElement("div");
+      div1.innerHTML = "shubhm jaiswal";
+      document.body.appendChild(div1); // method 1
+      div1.className = "middle_class";
+      div1.style.color = "yellow";
+      div1.setAttribute("title", "kalam");
+      console.log(div1);
+
+      // method 2
+      const h2_tag = document.createElement("h1");
+      const texts = document.createTextNode("hello aman");
+      h2_tag.appendChild(texts);
+      document.body.appendChild(h2_tag);
+
+      /////////////////////////////////////////////////////////////////////////////////////
+
+      // add new element
+
+      function add_new_li(lang) {
+        // m-1
+
+        const new_li = document.createElement("li");
+        new_li.appendChild(document.createTextNode(lang));
+        document.querySelector(".lang").appendChild(new_li);
+      }
+      add_new_li("python");
+      /////////////////////////////////////////////////////////////////////////////////////
+      function add_new_li2(lang) {
+        let new_li = document.createElement("li");
+
+        new_li.innerHTML = `${lang}`;
+        document.querySelector(".lang").appendChild(new_li);
+      }
+      add_new_li2("nodejs");
+      //////////////////////////////////////////////////////////////////////////////////////
+      //remove li
+
+      function remove_2ndli(lang) {
+        const sec_li = document.querySelector("li:nth-child(2)");
+        console.log(sec_li);
+        const new_li = document.createElement("li");
+        new_li.innerText = `${lang}`;
+
+        sec_li.replaceWith(new_li);
+      }
+      remove_2ndli("react");
+
+      //////////////////////////////////////////////////////////////////////////////////////////
+      function remove_firstli(lang) {
+        
+     const first_li=document.querySelector("li:first-chiild");
+           first_li.outerHTML=`<li>${lang}</li>`;
+      }
+       remove_firstli("typescript");
+
+       const last_li=document.querySelector("li:last-child");
+       last_li.remove();
+    </script>
+  </body>
+</html>
