@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+  <style>
+      .bg-red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body class="bg-red">
+    <div>
+      <h1 id="h1_id" class="h1_class">this is wbsite of shubham jaiswal</h1>
+      <p style="color: blue" id="p_id">
+        vjds jd ckds vdkj j cjdsnvjdsn vjd v j cjdns jv djv
+      </p>
+    </div>
+    <ul class="bbc">
+      <li class="abc">aman</li>
+      <li class="abc">aman2</li>
+      <li class="abc">aman3</li>
+    </ul>
+    <script>
+      document.getElementById("h1_id").setAttribute("class", "h2_class");
+      const p_id = document.getElementById("p_id");
+      p_id.style.color = "black";
+      p_id.style.border = "15px";
+      p_id.style.padding = "15px";
+      const q1 = document.querySelectorAll("li"); // it will select all li & return as ndeList then can do foreach
+      // but not map , filter bcoz have to change ARRAY
+      q1[0].style.backgroundColor = "green";
+      q1[0].innerText = "ghjkk";
+      console.log(q1[0].innerText);
+      q1.forEach((item) => {
+
+        item.style.color = "yellow";
+      });
+
+      const c1 = document.getElementsByClassName(".bbc");
+      c1.forEach((item) => {
+        item.style.backgroundColor = "green";
+      });
+    </script>
+  </body>
+</html>
