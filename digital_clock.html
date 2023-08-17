@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>digital clock</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+      }
+      .center {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #clock {
+        font-size: 80px;
+        background-color: red;
+        padding: 50px 50px;
+        margin-top: 50px;
+        border-radius: 50px;
+        color: greenyellow;
+      }
+      #banner {
+        background-color: palevioletred;
+        font-size: 80px;
+        border-radius: 10px;
+        color: #212121;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div id="banner"><span>this is my time </span></div>
+      <div id="clock"></div>
+    </div>
+
+    <script>
+      const clocks = document.querySelector("#clock");
+
+      setInterval(function () {
+        // no need to call it will call automatically at every 1 sec
+        clocks.innerHTML = new Date().toLocaleTimeString();
+      }, 1000);
+    </script>
+  </body>
+</html>
