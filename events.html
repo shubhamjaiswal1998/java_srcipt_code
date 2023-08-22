@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+
+</head>
+
+<body>
+
+    <div id="myButton">shubham jaiswal</div>
+    <input type="text" id="textinput" placeholder="Type something">
+
+    <select id="selectBox">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+    </select>
+
+    <div id="hoverDiv" style="width: 100px; height: 100px; background-color: lightblue;">jaiswal</div>
+
+    <script>
+     // click event   
+    ///////////////////////////////////////////////////////////////////////////////////////////////    
+    document.getElementById("myButton").addEventListener("click", function (event) {
+            alert("Button clicked!");
+        });
+     // input event
+     ///////////////////////////////////////////////////////////////////////////////////////////
+     document.getElementById("textinput").addEventListener("input",(e)=>{
+           console.log(e);
+            console.log(e.target);// it will give exact tag element or all line
+            console.log("input value is "+e.target.value);
+     })
+
+     /////////////////////////////////////////////////////////////////////////////////////////
+
+     // Change event
+     const selectBox = document.getElementById("selectBox");
+        selectBox.addEventListener("change", function(event) {
+            console.log("Selected option:", event.target.value);
+        });
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+      // Mouseover and mouseout events
+      const hoverDiv = document.getElementById("hoverDiv");
+        hoverDiv.addEventListener("mouseover", function(event) {//  here no use of event but write
+            hoverDiv.style.backgroundColor = "orange";
+        });
+        hoverDiv.addEventListener("mouseout", function(event) {
+            hoverDiv.style.backgroundColor = "lightblue";
+        });    
+    </script>
+</body>
+
+</html>
